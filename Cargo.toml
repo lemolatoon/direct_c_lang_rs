@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "direct_c_lang",
+    "direct_c_lang_sample"
+]
