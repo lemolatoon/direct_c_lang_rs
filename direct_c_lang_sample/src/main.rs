@@ -6,10 +6,18 @@ extern "C" {
 }
 
 fn main() {
-    println!("Hello, world!");
+    unsafe { fib(3) };
+    println!("Hello, world! from Rust.");
+    println!(
+        "{:?}",
+        (0..10)
+            .into_iter()
+            .map(|n| unsafe { fib(n) })
+            .collect::<Vec<_>>()
+    );
 }
 
-c_lang!{
+c_lang! {
     int fib(int n) {
         if (n < -1) {
             return -1;
@@ -20,4 +28,4 @@ c_lang!{
 
         return fib(n - 1) + fib(n - 2);
     }
-};
+}
