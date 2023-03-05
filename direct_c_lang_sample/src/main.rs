@@ -1,12 +1,7 @@
 use direct_c_lang::c_lang;
-use std::{arch::global_asm, ffi::c_int};
-
-extern "C" {
-    fn fib(n: c_int) -> c_int;
-}
+use std::arch::global_asm;
 
 fn main() {
-    unsafe { fib(3) };
     println!("Hello, world! from Rust.");
     println!(
         "{:?}",
