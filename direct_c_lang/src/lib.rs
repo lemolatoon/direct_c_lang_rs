@@ -48,7 +48,7 @@ fn c_lang_impl(tokens: TokenStream) -> Result<proc_macro2::TokenStream, syn::Err
                 if idx == 0 {
                     args_token = quote!(#ident : #arg);
                 } else {
-                    args_token = quote!(, #ident: #arg);
+                    args_token = quote!(#args_token, #ident: #arg);
                 }
             }
             declarations = quote!(
